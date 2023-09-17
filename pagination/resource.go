@@ -8,12 +8,13 @@ type Info struct {
 }
 
 func NewPaginationInfo(totalElements int, pagination *model.Pagination) *Info {
+	resource := &model.Resource{
+		TotalItems: totalElements,
+		TotalPages: getTotalPages(totalElements, pagination.Size),
+	}
 	return &Info{
 		pagination: pagination,
-		Resource: &model.Resource{
-			TotalItems: totalElements,
-			TotalPages: getTotalPages(totalElements, pagination.Size),
-		},
+		Resource:   resource,
 	}
 }
 
