@@ -7,8 +7,7 @@ type Info struct {
 	Resource   *model.Resource
 }
 
-func NewPaginationInfo(totalElements, page, size int) *Info {
-	pagination := newPagination(page, size)
+func NewPaginationInfo(totalElements int, pagination *model.Pagination) *Info {
 	return &Info{
 		pagination: pagination,
 		Resource: &model.Resource{
@@ -18,7 +17,7 @@ func NewPaginationInfo(totalElements, page, size int) *Info {
 	}
 }
 
-func newPagination(page int, size int) *model.Pagination {
+func NewPagination(page int, size int) *model.Pagination {
 	return &model.Pagination{
 		Page: page,
 		Size: size,
