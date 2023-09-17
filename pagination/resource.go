@@ -1,6 +1,6 @@
 package pagination
 
-import "github.com/mohammadyaseen2/Pagination/model"
+import "github.com/mohammadyaseen2/pagination/model"
 
 type Info struct {
 	pagination *model.Pagination
